@@ -8,7 +8,7 @@ class Converter(QtWidgets.QWidget):
         super().__init__()
         self.init_conv()
     
-    def init_conv(self):
+    def init_conv(self):              
         self.cat = QtWidgets.QPushButton("Clear both of the texts")
         self.pict = QtWidgets.QLabel()
         self.pict.setPixmap(QtGui.QPixmap("picture.jpg"))
@@ -37,7 +37,7 @@ class Converter(QtWidgets.QWidget):
 
         self.setLayout(v_box)
 
-        self.setWindowTitle("Convert .py to .exe[Barış ERTAN]")
+        self.setWindowTitle("Convert .py to .exe[Baris ERTAN]")
         self.setWindowIcon(QtGui.QIcon("picture.jpg"))
         self.setGeometry(500,100,500,500)
 
@@ -94,7 +94,7 @@ class Converter(QtWidgets.QWidget):
                 os.system("pyinstaller {} --onefile".format(self.thenameoffile))
                 self.situation.setText("Converted {} to exe!".format(self.thenameoffile))
             else:
-                self.situation.setText("Failed, please make sure about\n that there is a file named as {} and you have pyinstaller\n Write 'pip/pip3 install pyinstaller' to download it".format(self.thenameoffile))
+                self.situation.setText("Failed, please make sure about\n that there is a file named as '{}' and you have pyinstaller\n Write 'pip/pip3 install pyinstaller' to download it".format(self.thenameoffile))
         except:
             self.situation.setText("Failed, please make sure about\n that there is a file named as '{}' and you have pyinstaller\n Write 'pip/pip3 install pyinstaller to download it".format(self.thenameoffile))
 
@@ -106,8 +106,4 @@ window = Converter()
 
 sys.exit(app.exec())
 
-"""
-os.mkdir("{}".format(self.folderoftheexefile))
-os.chdir(self.folderoftheexefile)
-"""
-
+#CODES
