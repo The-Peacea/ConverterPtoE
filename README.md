@@ -6,5 +6,6 @@ PLEASE MAKE SURE YOU HAVE PYINSTALLER BEFORE USING THE PROGRAM
 
 # To Install Pyinstaller:
 pip3 install pyinstaller
-If it doesnt work, try:
+
+# If it doesnt work:
 pip install pyinstaller
