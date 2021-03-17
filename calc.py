@@ -8,7 +8,8 @@ class Converter(QtWidgets.QWidget):
         super().__init__()
         self.init_conv()
     
-    def init_conv(self):              
+    def init_conv(self): 
+        self.dpbutton = QtWidgets.QPushButton("Download Pyinstaller")             
         self.cat = QtWidgets.QPushButton("Clear both of the texts")
         self.pict = QtWidgets.QLabel()
         self.pict.setPixmap(QtGui.QPixmap("picture.jpg"))
@@ -32,6 +33,7 @@ class Converter(QtWidgets.QWidget):
         v_box.addWidget(self.optionone)
         v_box.addWidget(self.optiontwo)
         v_box.addWidget(self.button)
+        v_box.addWidget(self.dpbutton)
         v_box.addWidget(self.cat)
         v_box.addWidget(self.situation)
 
@@ -42,9 +44,17 @@ class Converter(QtWidgets.QWidget):
         self.setGeometry(500,100,500,500)
 
         self.show()
-
+        
+        self.dpbutton.clicked.connect(self.downloadpyinstaller)
         self.button.clicked.connect(self.controller)
         self.cat.clicked.connect(self.cleart)
+
+    def downloadpyinstaller(self):
+        try:
+            os.system("sudo pip3 install pyinstaller")
+        except:
+            os.system("sudo pip install pyinstaller")                
+
     def cleart(self):
         self.folderoftheexefile.setText("")
         self.thenameoffile.setText("")
@@ -94,7 +104,7 @@ class Converter(QtWidgets.QWidget):
                 os.system("pyinstaller {} --onefile".format(self.thenameoffile))
                 self.situation.setText("Converted {} to exe!".format(self.thenameoffile))
             else:
-                self.situation.setText("Failed, please make sure about\n that there is a file named as '{}' and you have pyinstaller\n Write 'pip/pip3 install pyinstaller' to download it".format(self.thenameoffile))
+                self.situation.setText("Failed, please make sure about\n that there is a file named as '{}' and you have pyinstaller\n Click 'Download Pyinstaller' to download it".format(self.thenameoffile))
         except:
             self.situation.setText("Failed, please make sure about\n that there is a file named as '{}' and you have pyinstaller\n Write 'pip/pip3 install pyinstaller to download it".format(self.thenameoffile))
 
