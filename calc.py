@@ -8,11 +8,12 @@ class Converter(QtWidgets.QWidget):
         super().__init__()
         self.init_conv()
     
-    def init_conv(self): 
-        self.dpbutton = QtWidgets.QPushButton("Download Pyinstaller(Only for Linux)")             
+    def init_conv(self):
+        self.setMaximumSize(500,500) 
+        self.dpbutton = QtWidgets.QPushButton("Download Pyinstaller")             
         self.cat = QtWidgets.QPushButton("Clear both of the texts")
         self.pict = QtWidgets.QLabel()
-        self.pict.setPixmap(QtGui.QPixmap("picture.jpg"))
+        self.pict.setPixmap(QtGui.QPixmap("pictures/picture.jpg"))
         self.iconthing = QtWidgets.QLabel()
         self.text = QtWidgets.QLabel("Welcome, this program is converting your python file to exe")
         self.folderoftheexefile = QtWidgets.QLineEdit("The name of folder that your program will stay in")
@@ -40,7 +41,7 @@ class Converter(QtWidgets.QWidget):
         self.setLayout(v_box)
 
         self.setWindowTitle("Convert .py to .exe[Baris ERTAN]")
-        self.setWindowIcon(QtGui.QIcon("picture.jpg"))
+        self.setWindowIcon(QtGui.QIcon("pictures/picture.jpg"))
         self.setGeometry(500,100,500,500)
 
         self.show()
