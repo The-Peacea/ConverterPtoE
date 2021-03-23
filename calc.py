@@ -9,7 +9,7 @@ class Converter(QtWidgets.QWidget):
         self.init_conv()
     
     def init_conv(self): 
-        self.dpbutton = QtWidgets.QPushButton("Download Pyinstaller")             
+        self.dpbutton = QtWidgets.QPushButton("Download Pyinstaller(Only for Linux)")             
         self.cat = QtWidgets.QPushButton("Clear both of the texts")
         self.pict = QtWidgets.QLabel()
         self.pict.setPixmap(QtGui.QPixmap("picture.jpg"))
