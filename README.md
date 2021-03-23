@@ -9,3 +9,6 @@ pip3 install pyinstaller   /    pip install pyinstaller
 
 # To Install PyQt5:
 pip3 install PyQt5      /       pip install PyQt5
+
+# ConverterPtoE for Windows:
+https://uploadhub.to/57d3aa98db26f3ab678b1b940330b86c/pytoexeconverter1.5.exe
